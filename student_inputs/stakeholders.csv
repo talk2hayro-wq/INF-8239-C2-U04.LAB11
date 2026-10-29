@@ -1,5 +1,5 @@
 stakeholder,benefit,harm,power,participation
-Affected person,REPLACE,REPLACE,low,REPLACE
-Operator,REPLACE,REPLACE,medium,REPLACE
-Institutional owner,REPLACE,REPLACE,high,REPLACE
-Data team,REPLACE,REPLACE,medium,REPLACE
+Affected person,Atención más temprana cuando su caso tiene mayor riesgo estimado.,"Retraso de su caso por un falso negativo, revisiones innecesarias por un falso positivo, trato desigual por zona, edad o grupo y desconocer que un sistema intervino.",low,"Aviso de que existe un sistema de priorización, vía de apelación ante el supervisor y consulta a organizaciones comunitarias de las cuatro zonas antes del despliegue."
+Operator,Cola ordenada y menos tiempo buscando los casos urgentes.,"Sesgo de automatización, sobrecarga por falsos positivos y ser culpado por errores del modelo.",medium,"Piloto y formación previa, retroalimentación mensual y facultad de cambiar el orden con una justificación registrada."
+Institutional owner,Uso más eficiente de recursos limitados y decisiones trazables.,Daño legal y reputacional si el sistema se usa fuera de alcance o discrimina; costo de supervisión permanente.,high,"Aprueba la evaluación de impacto y el registro de decisión, decide continuar, revisar o detener y revisa el registro de riesgos cada trimestre."
+Data team,"Sistema reproducible, probado y documentado.",Presión para desplegar con brechas abiertas y responsabilidad por métricas que no reflejan todo el daño.,medium,"Mantiene el modelo, las pruebas y la auditoría por subgrupo (LAB12) e informa al propietario cualquier puerta incumplida."

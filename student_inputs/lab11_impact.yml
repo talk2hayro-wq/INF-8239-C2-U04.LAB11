@@ -1,9 +1,32 @@
-purpose: REPLACE
-assisted_decision: REPLACE
-users: REPLACE
-affected_population: REPLACE
-owner: REPLACE
-non_predictive_alternative: REPLACE
-out_of_scope_use: REPLACE
-withdrawal_condition: REPLACE
-appeal_mechanism: REPLACE
+purpose: >-
+  Ordenar los casos territoriales sintéticos recibidos para que el equipo revise primero
+  los de mayor riesgo estimado. El sistema prioriza la revisión humana; no decide ni interviene.
+assisted_decision: >-
+  Orden de la cola de revisión: qué caso examina primero un operador. Cualquier intervención
+  posterior la decide y documenta una persona, con o sin la puntuación del modelo.
+users: >-
+  Operadores de revisión territorial y su supervisor. El equipo de datos accede solo para
+  mantenimiento, monitoreo y auditoría.
+affected_population: >-
+  Personas y hogares de las zonas Norte, Sur, Este y Oeste cuyos casos entran en la cola,
+  incluidos los grupos G1 y G2 y todos los tramos de edad. En este laboratorio, 640 casos sintéticos.
+owner: >-
+  Coordinación de revisión territorial (propietario institucional), que aprueba, suspende o
+  retira el sistema y firma el registro de decisión.
+non_predictive_alternative: >-
+  Cola por orden de llegada (received_date) con una lista de verificación pública basada en
+  incidentes previos, aplicada por el supervisor. Es también la línea base segura si el modelo se detiene.
+out_of_scope_use: >-
+  Intervención automática, decisión de elegibilidad o declaración de emergencia
+  (configs/governance.yml). Tampoco puede usarse para perfilar personas o poblaciones reales:
+  los datos son sintéticos.
+withdrawal_condition: >-
+  Detener el sistema y volver a la cola por orden de llegada si el recall global baja de 0.68,
+  si la brecha de recall o de FPR entre grupos supera 0.16 (puertas de governance.yml), si se
+  detecta su uso para elegibilidad o intervención automática, o si aparecen identificadores
+  directos en los datos. Solo se reactiva con una nueva evaluación aprobada por el propietario.
+appeal_mechanism: >-
+  La persona afectada, o el operador en su nombre, puede pedir al supervisor que revise el orden
+  asignado a su caso. El supervisor lo revisa manualmente, sin la puntuación del modelo, en un plazo
+  de 5 días hábiles, y registra la respuesta y su justificación; las apelaciones se informan
+  mensualmente al propietario.
