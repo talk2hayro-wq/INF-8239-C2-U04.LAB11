@@ -1,5 +1,10 @@
 activity,R,A,C,I
-Data quality,Data Engineer,Product Owner,Data Scientist,Affected representatives
-Model validation,Data Scientist,Product Owner,Data Engineer,Affected representatives
-Deployment,ML Engineer,Product Owner,Data Scientist,Users
-Incident response,ML Engineer,Institutional Owner,Legal and Data Scientist,Affected representatives
+Calidad y contrato de datos,Líder del equipo de datos,Coordinación de revisión territorial,Oficial de protección de datos,Supervisor de operadores
+Validación del modelo y auditoría de equidad,Líder del equipo de datos,Coordinación de revisión territorial,Comité de ética de datos,Representantes de personas afectadas
+Aprobación del despliegue,Comité de ética de datos,Coordinación de revisión territorial,Líder del equipo de datos y oficial de protección de datos,Supervisor de operadores
+Despliegue y reversión,Ingeniero de ML,Coordinación de revisión territorial,Líder del equipo de datos,Supervisor de operadores
+Monitoreo de deriva y puertas,Ingeniero de ML,Líder del equipo de datos,Comité de ética de datos,Coordinación de revisión territorial
+Revisión humana y apelaciones,Supervisor de operadores,Coordinación de revisión territorial,Comité de ética de datos,Representantes de personas afectadas
+Detención del sistema (STOP),Supervisor de operadores,Coordinación de revisión territorial,Líder del equipo de datos,Operadores y representantes de personas afectadas
+Respuesta a incidentes y postmortem,Ingeniero de ML,Coordinación de revisión territorial,Asesoría legal y oficial de protección de datos,Representantes de personas afectadas
+Comunicación a personas afectadas,Supervisor de operadores,Coordinación de revisión territorial,Asesoría legal,Representantes de personas afectadas
