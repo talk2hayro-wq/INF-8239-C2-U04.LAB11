@@ -1,6 +1,23 @@
-priority_harm: REPLACE
-primary_metric: REPLACE
-tolerance: REPLACE
-evidence: REPLACE
-limitation: REPLACE
-recommendation: REPLACE
+priority_harm: >-
+  Que un caso que requiere atención quede al final de la cola (falso negativo) y su revisión humana
+  se retrase. Daño secundario: revisiones innecesarias por falsos positivos.
+primary_metric: >-
+  Recall por grupo y brecha de recall entre G1 y G2. Métrica secundaria: FPR por grupo y su brecha.
+tolerance: >-
+  Recall de 0.68 o más en total y en cada grupo con soporte suficiente; brechas de recall y de FPR
+  de 0.16 o menos (configs/governance.yml). Los grupos interseccionales con menos de 30 casos de
+  prueba se reportan, pero no se interpretan.
+evidence: >-
+  reports/lab12/logistic: recall 0.717 (G1 0.653, G2 0.791), brecha de recall 0.138, brecha de FPR
+  0.125, 3.6 KB y 0.11 s de entrenamiento. reports/lab12/tree: el mismo recall global, brechas de
+  0.181 y 0.168, 7.9 KB y 0.16 s. Única intersección con 30 casos o más: G1 | 45-59 (35 casos), con
+  recall 0.588 (logístico) y 0.647 (árbol).
+limitation: >-
+  Solo 160 casos de prueba, una partición temporal y una semilla, sin intervalos de confianza. G2
+  tiene 16 negativos: cada falso positivo mueve su FPR 6 puntos. Siete de las ocho intersecciones
+  tienen menos de 30 casos. Los datos son sintéticos, y una brecha no prueba discriminación causal.
+recommendation: >-
+  REVIEW. Mantener la regresión logística como candidata: cumple las puertas y supera al árbol en
+  brechas, tamaño y tiempo. No desplegar todavía, porque el recall de G1 (0.653) y de G1 | 45-59
+  (0.588) está por debajo de 0.68. Investigar el umbral y los datos de G1, obtener más casos para G2 y
+  las intersecciones, y mantener la cola por orden de llegada mientras tanto.
